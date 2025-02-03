@@ -9,11 +9,6 @@ colnames(mefv.247612295.nlrp3) <- c("NLRP3", "MEFV", "Obsmm", "ObsmM", "ObsMm", 
 
 mefv.247612295.nlrp3 <- mefv.247612295.nlrp3[order(mefv.247612295.nlrp3$MEFV), ]
 
-ggplot(mefv.247612295.nlrp3, aes(x = MEFV, y = `p-value`)) +
-  geom_point() +
-  labs(x = "Position in MEFV", y = "p-value", title = "P-values across MEFV positions") +
-  theme_classic() +
-  theme(axis.text.x = element_text(angle = 90, hjust = 0.5))
 
 mefv.247612295.nlrp3$log_pvalue <- log10(mefv.247612295.nlrp3$`p-value`)
 mefv.247612295.nlrp3$log_pvalue[is.infinite(mefv.247612295.nlrp3$log_pvalue)] <- NA
